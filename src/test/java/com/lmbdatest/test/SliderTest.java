@@ -5,10 +5,7 @@ import com.lambdatest.manager.SliderManager;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 public class SliderTest {
     SliderManager sliderManager = new SliderManager();
@@ -30,8 +27,9 @@ public class SliderTest {
             Assert.assertTrue(sliderManager.validateSlider(num));
     }
 
-    @AfterClass
-    public void afterClass() {
+
+    @AfterSuite
+    public void afterSuite(){
         sliderManager.driver.quit();
     }
 }

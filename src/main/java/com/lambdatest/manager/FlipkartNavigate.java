@@ -12,15 +12,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FlipkartNavigate implements SeleniumConstants {
-    static WebDriver driver;
-
-    static {
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-    }
+    public WebDriver driver;
 
 
-    public static void printProductDetails(List<WebElement> searchelementList) {
+
+    public  void printProductDetails(List<WebElement> searchelementList) {
         String value = null;
         for (WebElement element : searchelementList) {
             String key = element.findElement(By.className("s1Q9rs")).getAttribute("title");
@@ -29,7 +25,7 @@ public class FlipkartNavigate implements SeleniumConstants {
         }
     }
 
-    public static void clickNextButton(WebElement next) {
+    public  void clickNextButton(WebElement next) {
 
         try {
             next=driver.findElement(By.xpath("//*[@id=\"container\"]/div/div[3]/div[1]/div[2]/div[12]/div/div/nav"));
@@ -41,7 +37,7 @@ public class FlipkartNavigate implements SeleniumConstants {
 
     }
 
-    public static void main(String[] args) throws InterruptedException {
+    public  void flipkartProductJourney() throws InterruptedException {
         driver.get(flipkartUrl);
         WebElement webElement = driver.findElement(By.xpath(flipkartSearchBoxXpath));
         webElement.sendKeys(searchString);
@@ -61,6 +57,6 @@ public class FlipkartNavigate implements SeleniumConstants {
                 Thread.sleep(5000);
             }
         }
-        driver.quit();
+//        driver.quit();
     }
 }
