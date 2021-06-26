@@ -10,7 +10,7 @@ import org.testng.annotations.*;
 public class SliderTest {
     SliderManager sliderManager = new SliderManager();
 
-
+// Xpath=//*[@class='_1LKTO3']//*[text()='Testing']
     @BeforeClass
     public void beforeClass() {
         WebDriverManager.chromedriver().setup();

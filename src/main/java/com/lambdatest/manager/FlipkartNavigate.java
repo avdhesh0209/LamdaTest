@@ -29,7 +29,8 @@ public class FlipkartNavigate implements SeleniumConstants {
 
         try {
             next=driver.findElement(By.xpath("//*[@id=\"container\"]/div/div[3]/div[1]/div[2]/div[12]/div/div/nav"));
-            next = next.findElement(By.xpath("//*[@id=\"container\"]/div/div[3]/div[1]/div[2]/div[12]/div/div/nav/a[4]"));
+            next=next.findElement(By.xpath("//*[@class='_1LKTO3']//*[text()='Next']"));
+//            next = next.findElement(By.xpath("//*[@id=\"container\"]/div/div[3]/div[1]/div[2]/div[12]/div/div/nav/a[4]"));
             next.click();
         } catch (Exception e) {
             System.err.println("Cannot click, next not found " + e.getMessage());
